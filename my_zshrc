@@ -1,0 +1,32 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+
+
+# Customize to your needs...
+
+alias cslabs="~/dev/UTCSLabs/UTCSLabs/labs.sh"
+alias aj="ssh dbthaker@almond-joy.cs.utexas.edu"
+alias printme="~/dev/UTCSprint/print.sh"
+alias prun="python examples/cooper.py"
+. `brew --prefix`/etc/profile.d/z.sh
+export PATH="/Users/darshan/anaconda/bin:$PATH"
+
+alias dockme='docker start fervent_shockley && docker attach fervent_shockley'
+alias ll="ls -alh"
+alias embed="screen /dev/tty.usbmodem* 115200"
+alias python2="python"
+
+$(boot2docker shellinit 2> /dev/null)
+
+#while true; do ~/dev/DownloadCleanUp/cleanup.sh ; sleep 10000; done &
+bindkey "^R" history-incremental-search-backward
